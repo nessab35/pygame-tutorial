@@ -1,4 +1,4 @@
-# example2 
+# example2 drawing objects
 # Import and initialize pygame
 import pygame
 pygame.init()

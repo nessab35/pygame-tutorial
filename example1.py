@@ -1,4 +1,4 @@
-# challenge 1
+# challenge 1 getting started with python
 import pygame
 pygame.init()
 
