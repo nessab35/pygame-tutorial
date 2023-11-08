@@ -3,10 +3,9 @@ import pygame
 pygame.init()
 
 screen = pygame.display.set_mode([500, 500])
-
 radius = 50
 
-
+# challenge 1
 # create the game loop
 running  = True
 while running:
@@ -43,32 +42,25 @@ while running:
     # update display
     pygame.display.flip()
 
-# challenge 2
-import pygame
-pygame.init()
-
-screen = pygame.display.set_mode([500, 500])
-
-# color
-colors = {
-    'white' : (255, 255, 255),
-    'dark grey' : (50, 50, 50),}
-
-# circle
-radius = 50
-
+# -----------------------------------------------
+# CHALLENGE 2
 
 running = True
 while running:
+    #lookds at events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = True
+            running = False
 
-    # clear screen
-    screen.fill(colors['white'])
+    #draw circle
+    screen.fill((255, 255, 255))
 
-    # drawing here
+    for i in range(0,9):
+        color = (90, 90, 90)
+        x = ((i % 3) * 175) + 75
+        y = (int(i / 3) * 175) + 75
+        position = (x,y)
 
+        pygame.draw.circle(screen, color, position, radius)
 
-    # update display
     pygame.display.flip()
