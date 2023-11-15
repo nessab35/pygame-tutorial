@@ -7,10 +7,14 @@ pygame.init()
 
 #configure the screen
 screen = pygame.display.set_mode([500, 500])
+
 # use clock rate to get consistent frame rate
 clock = pygame.time.Clock()
 positions = [93, 218, 343]
 
+
+#----------------------------------------------------------------
+# Game Object
 class GameObject(pygame.sprite.Sprite):
     '''Parent Class'''
     def __init__(self, x, y, image):
@@ -23,6 +27,8 @@ class GameObject(pygame.sprite.Sprite):
         screen.blit(self.surf, (self.x, self.y))
 
 
+#----------------------------------------------------------------
+# Apple
 class Apple(GameObject):
     '''Class for apple image'''
     def __init__(self):
@@ -45,6 +51,8 @@ class Apple(GameObject):
         self.y = -64
 
 
+#----------------------------------------------------------------
+# Strawberry
 class StrawBerry(GameObject):
     '''Straw Berry image'''
     def __init__(self):
@@ -65,7 +73,9 @@ class StrawBerry(GameObject):
         self.y = random.choice(positions)
         self.x = -64
 
+
 #--------------------------------------------------------------
+# Player
 # challenge 2, left,right,up,down in lanes using 125, difference betwen [90, 218, 343]
 class Player(GameObject):
     '''Player Class'''
@@ -100,6 +110,7 @@ class Player(GameObject):
         self.y = 250 - 32
 
 
+#----------------------------------------------------------------
 # creating instance
 apple = Apple()
 strawberry = StrawBerry()

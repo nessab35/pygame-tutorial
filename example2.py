@@ -7,6 +7,8 @@ pygame.init()
 screen = pygame.display.set_mode([500, 500])
 
 
+#----------------------------------------------------------------
+# Game Object
 class GameObject(pygame.sprite.Sprite):
     def __init__(self, x, y, image):
         super(GameObject, self).__init__()
@@ -17,13 +19,15 @@ class GameObject(pygame.sprite.Sprite):
     def render(self, screen):
         screen.blit(self.surf, (self.x, self.y))
 
+
 # create instance of Game Object
 apple = GameObject(120, 300, 'images/apple.png')
+
 
 #------------------------------------------------------------
 # CHALLENGE 1
 strawberry = GameObject(200, 300, 'images/strawberry.png')
-#------------------------------------------------------------
+
 
 #------------------------------------------------------------
 # CHALLENGE 2
@@ -37,6 +41,8 @@ apple2 = GameObject(50, 45, 'images/apple.png') # top left
 apple3 = GameObject(375, 45, 'images/apple.png') # top right
 apple4 = GameObject(375, 400, 'images/apple.png') # bottome right
 apple5 = GameObject(210, 200, 'images/apple.png') # middle
+
+
 #------------------------------------------------------------
 # Create the game loop
 running = True
